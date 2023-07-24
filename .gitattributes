@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.PowerShell linguist-detectable=false
+*.Roff linguist-detectable=false
