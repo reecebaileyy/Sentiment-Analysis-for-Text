@@ -38,15 +38,15 @@ plt.show()
 # Text Preprocessing
 def transformations(dataframe):
     dataframe['text'] = dataframe['text'].apply(lambda words: re.sub('<.*?>','',words))  # HTML Tags removal
-    dataframe['text'] = dataframe['text'].apply(word_tokenize)  # Word Tokenization
-    dataframe['text'] = dataframe['text'].apply(lambda words: [x.lower() for x in words])  # Lower case conversion
-    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if x not in punctuation])  # Punctuation removal
-    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if not x.isdigit()])  # Number removal
-    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if x not in stopwords.words('english')])  # Stopword removal
+    dataframe['text'] = dataframe['text'].apply(word_tokenize)  
+    dataframe['text'] = dataframe['text'].apply(lambda words: [x.lower() for x in words])  
+    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if x not in punctuation])  
+    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if not x.isdigit()])  
+    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if x not in stopwords.words('english')]) 
     temp = dataframe['text'].apply(lambda words: " ".join(words))
     freq = pd.Series(temp).value_counts()[:10]
-    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if x not in freq.keys()])  # Frequent word removal
-    dataframe['text'] = dataframe['text'].apply(lambda words: " ".join([Word(x).lemmatize() for x in words]))  # Lemmatization
+    dataframe['text'] = dataframe['text'].apply(lambda words: [x for x in words if x not in freq.keys()]) 
+    dataframe['text'] = dataframe['text'].apply(lambda words: " ".join([Word(x).lemmatize() for x in words])) 
     return dataframe
 
 train = transformations(train)
