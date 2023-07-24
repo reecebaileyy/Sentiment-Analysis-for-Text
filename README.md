@@ -5,13 +5,14 @@ Dive into the world of movie reviews and analyze sentiments using Python! 🎥�
 This repository contains a Python-based Sentiment Analysis tool which classifies IMDb movie reviews into positive (👍) and negative (👎) sentiments. Whether you're a movie buff, a data enthusiast, or someone who just loves playing with texts, this tool is for you!
 
 ## 📂 Structure
+```
 .
 ├── IMDB
 │   ├── Train.csv
 │   ├── Valid.csv
 │   ├── Test.csv
 └── text_analysis.py
-
+```
 ## 🚀 Getting Started
 
 ### 🛠 Prerequisites
