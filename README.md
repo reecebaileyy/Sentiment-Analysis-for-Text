@@ -25,7 +25,7 @@ python3 --version
 1. Clone this repository:
 ```bash
 git clone [(https://github.com/reecebaileyy/Sentiment-Analysis-for-Text.git)]
-cd [your-cloned-repo-folder]
+cd Sentiment-Analysis-for-Text
 ```
 
 2. Install required libraries:
